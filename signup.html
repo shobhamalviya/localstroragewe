@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <a href="sign In.html">Signin</a> -->
+    <style>
+        form{
+            height: auto;
+            width: 35%;
+            margin: auto;
+            justify-content: center;
+            /* border: 1px solid black; */
+            margin-top: 100px;
+            border-radius: 10px;            
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        }
+        form>p{
+            margin-left: 10px;
+        }
+        form>input{
+            width: 80%;
+            margin-left: 10px;
+        }
+        #btn{
+         margin-top: 30px;
+         justify-content: center;
+         align-items: center;
+         margin-left: 30px;
+         height: 30px;
+         border-radius: 10px;
+        }
+        body>h1{
+            text-align: center;
+        }
+        form>h2{
+            text-align: center;
+        }
+        body>img{
+            margin-left: 43%;
+            display: flex;
+            justify-items: center;
+            margin-top: 10px;
+            
+        }
+        #text{
+            font-size: 10px;
+            padding-top: 20px;
+        }
+        h4{
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <img src="https://sso.masaischool.com/brand_dark.svg" alt="">
+
+    <form>
+        <h2>Signup</h2>
+        <p>Full name</p>
+        <input type="text" placeholder="Enter your full name" id="username">
+        <p >Email</p>
+        <input type="text" placeholder="Enter email" id="email">
+        <p>Passwod</p>
+        <input type="text" placeholder="Enter Password" id="password" >
+        <p id="text">By signing up , I accept the masai School <a href="https://masaischool.com/terms/">Terms Of Service </a>  and acknowledge tha <a href="https://masaischool.com/privacy/">Privacy Policy</a> .</p>
+        <input type="submit" id="btn" value="SIGN UP" >
+        <h4>Already have an account ? <a href="login.html">sign in </a>.</h4>
+    </form>
+</body>
+</html>
+<script>
+    var form =document.querySelector("form")
+    form.addEventListener("submit",function(event){
+
+        event.preventDefault()
+         
+        var data = {
+         username:form.username.value,
+         email:form.email.value,
+         password:form.password.value,
+        }
+       localStorage.setItem("userData",JSON.stringify(data))
+       window.location.href="sign In.html"
+    })
+
+
+   
+</script>
